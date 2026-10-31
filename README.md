@@ -180,7 +180,7 @@ A status line is printed every 0.5 s with the elapsed time, the current state an
 
 Tested in `turtlebot3_world`: normal obstacle avoidance, escape after being placed against a cylinder, pausing and resuming through the service, a forced reset with `stuck_timeout:=3.0`, and a clean stop on Ctrl+C. Also run in `turtlebot3_house`.
 
-Demonstration video: *[link]*
+Demonstration video: https://screenapp.io/app/share/FtWANpm13f7RpJGotwL3ErPx
 
 ## Limitations and future work
 
