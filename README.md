@@ -151,7 +151,7 @@ The turn direction (towards the side with more space) is chosen **once**, when t
 
 ### Hysteresis
 
-The robot starts turning below **0.4 m** but only drives again above **0.6 m**. With a single threshold it would stop turning the moment the obstacle was barely out of range, drive a couple of centimetres, and start turning again — a stutter. The gap between the two thresholds makes it finish each turn properly.
+The robot starts turning below **0.4 m** but only drives again above **0.6 m**. With a single threshold it would stop turning the moment the obstacle was barely out of range, drive a couple of centimetres, and start turning again, a stutter. The gap between the two thresholds makes it finish each turn properly.
 
 ### Safety bubble
 
@@ -185,11 +185,7 @@ Demonstration video: https://screenapp.io/app/share/FtWANpm13f7RpJGotwL3ErPx
 ## Limitations and future work
 
 - **Purely reactive.** The robot reacts only to what it sees at each moment, with no memory and no goal. In a closed room it ends up circling along the walls, never visiting the middle; in the house world it can drive out through an open side, since with nothing in range it simply keeps going.
-- **One ray per degree assumed.** Sector angles are used directly as array indices, which holds for the TurtleBot3 LiDAR (360 samples, starting at 0°). A different sensor would need the angles converted using `angle_min` and `angle_increment`.
-- **Parameters at start-up only.** Changes made with `ros2 param set` while running have no effect.
-- **Wall-clock timeout.** `stuck_timeout` uses the computer's clock; with `use_sim_time` it would follow Gazebo's simulated time instead.
 
-**Next step — coverage.** Using odometry (`/odom`) and a grid of visited cells, the robot could remember where it has been and prefer unexplored areas, turning the obstacle avoider into a room-coverage robot. Coverage planning is closely related to drone mission planning, such as surveying an area in lanes.
 
 ## Author
 
